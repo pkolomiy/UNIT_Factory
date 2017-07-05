@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Rush01</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body style="margin: auto;">
+	<div class="sidemenu">
+	  <div class="div-center">
+		<a class="button" id="cwturn-left">&#8634;</a>
+		<a class="button" id="go-left">&#8593;</a>
+		<a class="button" id="wturn-left">&#8635;</a>
+		<br>
+		<a class="button-attack" id="at1">Attack!</a>
+		<br>
+		<div class="rubik" id="rubik-left" onclick="random('rubik-left')">0</div>
+		<div class="ship"><img id="ship1" src="small.png"></div>
+		<div class="ship"><img id="ship2" src="small.png"></div>
+		<div class="ship"><img id="ship3" src="small.png"></div>
+	  </div>
+	</div>
+	<div class="shipboard">
+	  <script src="map.js"></script>
+	  <script src="move.js"></script>
+	  <script src="java.js"></script>
+	</div>
+	<div class="sidemenu">
+	  <div class="div-center">
+		<a class="button" id="cwturn-right">&#8634;</a>
+		<a class="button" id="go-right">&#8593;</a>
+		<a class="button" id="wturn-right">&#8635;</a>
+		<br>
+		<a class="button-attack" id="at2">Attack!</a>
+		<br>
+		<div class="rubik" id="rubik-right" onclick="random('rubik-right')">0</div>
+		<div class="ship"><img id="ship4" src="small.png"></div>
+		<div class="ship"><img id="ship5" src="small.png"></div>
+		<div class="ship"><img id="ship6" src="small.png"></div>
+	  </div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>balloon</title>
+	<style>
+	 #balloon
+	 {
+	   width: 200px;
+       height: 200px;
+       background-color: red;
+       border-radius: 1000px;
+	 }
+	</style>
+  </head>
+  <body>
+	<div id="balloon" onclick="color(1)" onmouseout="color(0)"></div>
+	<script>
+	 function color(i)
+	 {
+	   var colr = window.getComputedStyle(document.getElementById('balloon')).getPropertyValue('background-color'),
+		   wd = parseInt(window.getComputedStyle(document.getElementById('balloon')).getPropertyValue('width')),
+		   hg = parseInt(window.getComputedStyle(document.getElementById('balloon')).getPropertyValue('height'));
+	   	 console.debug(colr,wd,hg);
+	   if (colr == 'rgb(255, 0, 0)')
+		 balloon.style.backgroundColor = i ? 'green' : 'blue';
+	   else if (colr == 'rgb(0, 128, 0)')
+		 balloon.style.backgroundColor = i ? 'blue' : 'red';
+	   else if (colr == 'rgb(0, 0, 255)')
+		 balloon.style.backgroundColor = i ? 'red' : 'green';
+	   balloon.style.width = i ? (wd < 420 ? wd + 10 +'px' : '200px') : (wd != 200 ? wd - 5 +'px' : '200px');
+	   balloon.style.height = i ? (hg < 420 ? hg + 10 +'px' : '200px') : (hg != 200 ? hg - 5 +'px' : '200px');
+	 }
+	</script>
+  </body>
+</html>

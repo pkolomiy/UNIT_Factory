@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>balloon</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+	 #balloon
+	 {
+	   width: 200px;
+       height: 200px;
+       background-color: red;
+       border-radius: 1000px;
+	 }
+	</style>
+  </head>
+  <body>
+	<div id="balloon"></div>
+	<script>
+	 $(document).ready(function()
+	   {
+		 function func(i)
+		 {
+		    var colr = $("#balloon").css("background-color"),
+			  wd = parseInt($("#balloon").css("width")),size,corl;
+		   corl = colr == 'rgb(255, 0, 0)' ? (i ? 'green' : 'blue') :
+				  (colr == 'rgb(0, 128, 0)' ? (i ? 'blue' : 'red') :
+				  (colr == 'rgb(0, 0, 255)' ? (i ? 'red' : 'green') : 0));
+		   size = i ? (wd < 420 ? wd + 10 +'px' : '200px') :
+				  (wd != 200 ? wd - 5 +'px' : '200px');
+		   $("#balloon").width(size).height(size).css("background-color", corl);
+		 }
+		$("#balloon").click(function (){func(1);}).mouseout(function (){func(0);});
+	   });
+	</script>
+  </body>
+</html>

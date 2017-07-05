@@ -1,0 +1,92 @@
+body {
+	height: 100%;
+	background-image: url("stars.jpg");
+}
+.table
+{
+	display: table;
+	width: 100%;
+
+}
+.row
+{
+	display: table-row;
+}
+.cell
+{
+	display: table-cell;
+	border: 0.001vw solid;
+	font-size: 0.4vw;
+}
+.cell-ship
+{
+	display: table-cell;
+	background-color: green;
+	border: 0.001vw solid;
+	font-size: 0.4vw;
+}
+
+.cell-obstacle
+{
+	display: table-cell;
+	background-color: red;
+	border: 0.001vw solid;
+	font-size: 0.4vw;
+}
+.div-center {
+	text-align: center;
+}
+.shipboard {
+	width: 80%;
+	float: left;
+}
+.sidemenu {
+	float: left;
+	width: 10%;
+	height: 100vh;
+	background-color: lightgrey;
+	padding-top: 1%;
+}
+.button, .button-attack {
+	cursor: pointer;
+	display: inline-block;
+    padding: 0.5vw 0.5vw;
+	margin: 0.2vw;
+	font-size: 1vw;
+	background-color: green;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+a.button:hover {
+	background-color: lightgreen;
+	color: green;
+	box-shadow: 0 0 5px 2px #fff;
+}
+a.button-attack:hover {
+	background-color: red;
+	color: black;
+	box-shadow: 0 0 5px 2px black;
+}
+.rubik {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+    padding: 1vw;
+	border-radius: 2vw;
+	background-color: grey;
+    margin-top: 1vw;
+	color: white;
+	font-size: 1.5vw;
+}
+.ship
+{
+	margin-top: 15%;
+}
+img
+{
+	width: 80%;
+	cursor: pointer;
+	border-radius: 1vw;
+}

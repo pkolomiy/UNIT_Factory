@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>calc</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+	<input id="one" type="text">
+	<select id="opt">
+	  <option value="1">+</option>
+	  <option value="2">-</option>
+	  <option value="3">*</option>
+	  <option value="4">/</option>
+	  <option value="5">%</option>
+	</select>
+	<input id="two" type="text">
+	<input id="try" type="submit" name="submit" value="Try me!">
+	<script>
+	 setInterval(function(){ alert("Please, use me..."); }, 30000);
+	 $(document).ready(function(){
+	   $("#try").click(function (){
+		 function calc(x,y,z){return z == '1' ? x + y : (z == '2' ? x - y : (z == '3' ? x * y : (z == '4' ? x / y : (z == '5' ? x % y : 0))));}
+		 var x = $('#one').val(), y = $('#two').val(), z = $('#opt').val(),
+			 x1 = parseFloat(x), y1 = parseFloat(y),w;
+		 alert($.isNumeric(x) && $.isNumeric(y) && x1 >= 0 && y1 >= 0 &&
+			   !(x1 % 1) && !(y1 % 1) ?
+			   ((z == '4' || z == '5') && !y1 ? "It’s over 9000!" :
+				w = calc(x1,y1,z)) : "Error :(");
+		 console.log(w);
+	   })
+	 });
+	</script>
+  </body>
+</html>
