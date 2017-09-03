@@ -67,8 +67,7 @@ char	*join(char *str, char *temp, int nbr)
 
 	if (!str)
 		return (copy_or_crop_string(temp, MAKE_A_COPY, nbr));
-	newstr = (char*)malloc(search_or_strlen(str, STRING_LENGTH, 0) +
-						search_or_strlen(temp, STRING_LENGTH, 0) + 1);
+	newstr = (char*)malloc(search_or_strlen(str, STRING_LENGTH, 0) + nbr + 1);
 	index = 0;
 	other_index = 0;
 	while (str[index])
