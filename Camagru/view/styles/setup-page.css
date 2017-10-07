@@ -1,0 +1,181 @@
+.line {
+    background : linear-gradient(-200deg,
+    #000, #111, #222, #333,
+    #444, #555, #666, #777,
+    #888, #999, #aaa, #bbb,
+    #ccc, #ddd, #eee, #fff,
+    #eee, #ddd, #ccc, #bbb,
+    #aaa, #999, #888, #777,
+    #666, #555, #444, #333,
+    #222, #111, #000);
+}
+
+.main-body {
+    flex-direction : column;
+}
+
+.setup {
+    margin-top     : 0;
+    border-radius  : 0;
+    display        : flex;
+    flex-direction : column;
+    box-shadow     : 0 0 50px 10px #888;
+    z-index        : 1;
+}
+
+#beveled1, #beveled2 {
+    border             : 20px solid #fff;
+    border-right-color : transparent;
+    border-left-color  : transparent;
+    border-top         : 0;
+    width              : 38%;
+    margin-bottom      : -14pt;
+    z-index            : 2;
+}
+
+#beveled2 {
+    border-bottom-color : #ddd;
+}
+
+#tab1, #tab2 {
+    z-index                 : 3;
+    border-top-right-radius : 50px;
+    border-top-left-radius  : 50px;
+    cursor                  : pointer;
+    margin                  : 0 7px;
+    padding                 : 0;
+    text-align              : center;
+    width                   : 44%;
+}
+
+.tabs {
+    margin          : 0;
+    padding         : 0;
+    width           : 453px;
+    align-items     : center;
+    justify-content : center;
+    flex-wrap       : wrap;
+}
+
+button {
+    margin  : 0;
+    padding : 2px 20px 5px;
+}
+
+.setup .cell {
+    flex-direction : column;
+    height         : 200px;
+    width          : 400px;
+}
+
+.setup .cell .cell {
+    height         : 70px;
+    flex-direction : row;
+    width          : 100%;
+}
+
+.cell .cell .cell:nth-child(1) {
+    width : 70%;
+}
+
+#install, #delete {
+    margin-left : 40px;
+}
+
+#window {
+    flex-grow     : 1;
+    height        : 100%;
+    width         : 100%;
+    text-overflow : clip;
+    overflow      : auto;
+}
+
+#window p {
+    margin-top    : 10px;
+    width         : 90%;
+    cursor        : pointer;
+    text-align    : left;
+    text-overflow : clip;
+    white-space   : nowrap;
+}
+
+#message {
+    flex-grow  : 1;
+    height     : 100%;
+    width      : 100%;
+    text-align : center;
+    font       : 20px/160px sans-serif;
+}
+
+p span {
+    font       : bold 20px sans-serif;
+    color      : #000;
+    visibility : hidden;
+    position   : relative;
+    left       : 100px;
+}
+
+p span:hover {
+    color : #f00;
+}
+
+
+#restore {
+    padding : 2px 20px 5px;
+}
+
+.deactivate {
+    color : #ddd;
+}
+
+.deactivate:hover {
+    box-shadow : none;
+}
+
+.deactivate:active {
+    cursor     : auto;
+    transform  : none;
+    border     : none;
+    box-shadow : none;
+}
+
+#sure {
+    padding-left     : 32vw;
+    padding-top      : 40vh;
+    overflow         : auto;
+    left             : 0;
+    top              : 0;
+    width            : 100%;
+    height           : 100%;
+    position         : fixed;
+    z-index          : 4;
+    background-color : rgba(0, 0, 0, 0.4);
+}
+
+#sure button {
+    font          : normal 15px "Tahoma", sans-serif;
+    color         : #000;
+    border        : none;
+    border-radius : 5px;
+    padding       : 3px 4%;
+    margin-left   : 5%;
+}
+
+#sure p {
+    font          : normal 18px "Tahoma", sans-serif;
+    border-radius : 30px;
+    height        : 30px;
+    padding       : 30px 30px 50px;
+    margin-bottom : -40px;
+    background    : #fff;
+    width         : 30%;
+    text-align    : center;
+}
+
+#yes {
+    background : #6d6;
+}
+
+#no {
+    background : #f87;
+}

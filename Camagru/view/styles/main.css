@@ -1,0 +1,332 @@
+@import "line-gradient(color).css";
+@import "setup-form.css";
+@import "gallery.css";
+@import "forms.css";
+
+* {
+    margin  : 0;
+    padding : 0;
+}
+
+body {
+    flex-direction : column;
+    height         : 100vh;
+}
+
+header {
+    z-index         : 4;
+    justify-content : center;
+    background      : #fff;
+    text-align      : center;
+    font            : bold 35px "Comic Sans MS", sans-serif;
+    padding-bottom  : 10px;
+}
+
+header p {
+    align-self : center;
+    flex       : 1;
+}
+
+#add, #canvas, #make, #next, #photos, #post, #restore, #settings, #sure, #video, #window,
+.arrows, .answers, .buttons, .edit, .popup, .super-img, .warn, .edit > .ico > img {
+    display : none;
+}
+
+body, header, .buts, .capture, .cell, .col-box, .comments, .icons, .main-body,
+.layout, .likes, .likes > div, .photo-box, .setup .cell, .tabs {
+    display : flex;
+}
+
+.popup {
+    position        : fixed;
+    align-items     : center;
+    justify-content : center;
+    z-index         : 6;
+    background      : rgba(0, 0, 0, 0.4);
+    width           : 100%;
+    height          : 100%;
+    top             : 0;
+    left            : 0;
+}
+
+.popup img {
+    margin : 0;
+}
+
+.popup > .cell {
+    background    : #fff;
+    border-radius : 10px;
+    padding       : 5px;
+    position      : relative;
+    width         : auto;
+}
+
+.answers {
+    width           : 100%;
+    height          : 100%;
+    justify-content : center;
+    align-items     : center;
+    position        : absolute;
+    left            : 0;
+    top             : 0;
+    background      : rgba(255, 255, 255, 0.8);
+    z-index         : 6;
+    border-radius   : 10px;
+}
+
+.buts {
+    width           : 533px;
+    justify-content : space-around;
+}
+
+.likes {
+    flex-direction : column;
+    position       : relative;
+}
+
+.likes > div {
+    width           : 266px;
+    height          : 40px;
+    margin          : 5px 0;
+    justify-content : space-between;
+    align-items     : center;
+}
+
+.comments-date {
+    font       : 13px sans-serif;
+    color      : #777;
+    text-align : right;
+}
+
+#load-date {
+    width      : 133px;
+    text-align : right;
+}
+
+#author {
+    text-align : left;
+    font       : 13px sans-serif;
+    width      : 133px;
+    word-wrap  : break-word;
+}
+
+#up2, #down2 {
+    width   : 25px;
+    height  : 25px;
+    display : none;
+}
+
+#up2 {
+    margin-top : 5px;
+}
+
+#down2 {
+    margin-bottom : 5px;
+}
+
+.comments {
+    align-items    : flex-start;
+    flex-direction : column;
+    width          : 266px;
+    height         : 380px;
+    text-align     : left;
+    padding        : 0 5px;
+    overflow-y     : auto;
+    overflow-x     : hidden;
+}
+
+.comments > div > p, .comments > div > h5, .comments > div {
+    width     : 100%;
+    word-wrap : break-word;
+    margin    : 5px 0;
+    position  : relative;
+}
+
+.likes, .comments {
+    color : #000;
+}
+
+.comments > div > h5, #author {
+    color       : #fff;
+    text-shadow : 1px 0 2px #000, 0 1px 2px #000, -1px 0 2px #000, 0 -1px 2px #000;
+}
+
+#remove {
+    font-size : 10px;
+    z-index   : 4;
+    position  : absolute;
+    left      : 0;
+    bottom    : 0;
+    margin    : 0;
+}
+
+textarea {
+    border : 1px solid #000;
+    margin : 0;
+    width  : 100%;
+    resize : none;
+}
+
+#count {
+    position    : absolute;
+    bottom      : -25px;
+    color       : #888;
+    font-family : sans-serif;
+    font-size   : 15px;
+    visibility  : hidden;
+}
+
+.popup button {
+    font-size : 13px;
+    margin    : 10px;
+}
+
+#close {
+    cursor        : pointer;
+    width         : 20px;
+    height        : 20px;
+    background    : #fff;
+    text-align    : center;
+    border-radius : 10px;
+    top           : -20px;
+    right         : 0;
+    position      : absolute;
+    line-height   : 20px;
+}
+
+#close:hover {
+    color : #f00;
+}
+
+.main-body {
+    background      : #eee;
+    justify-content : center;
+    align-items     : center;
+    flex-grow       : 1;
+    position        : relative;
+}
+
+.form-body, .setup {
+    border        : 2px solid white;
+    border-radius : 5px;
+    background    : #fff;
+    margin        : 10px;
+    padding       : 10px;
+    box-shadow    : 0 0 1px 1px grey;
+}
+
+.cell {
+    justify-content : center;
+    align-items     : center;
+    text-align      : center;
+    width           : 250px;
+}
+
+input {
+    font          : 14px/20px sans-serif;
+    outline       : none;
+    border        : hidden;
+    box-shadow    : 0 0 1px 1px grey;
+    border-radius : 5px;
+    padding       : 4px 10px;
+    margin        : 5px 0;
+}
+
+input:focus {
+    box-shadow : 0 0 3px 3px #4169E1;
+}
+
+button {
+    cursor         : pointer;
+    outline        : none;
+    text-align     : center;
+    font           : bold 15px "Comic Sans MS", sans-serif;
+    letter-spacing : 2px;
+    color          : #fff;
+    border-radius  : 20px;
+    border         : thin solid;
+    border-image   : none;
+    padding        : 2px 45px 5px 45px;
+    margin         : 15px 0;
+}
+
+button:active {
+    transform : translateY(2px);
+}
+
+.blue {
+    text-shadow      : 1px 1px #009;
+    background-image : linear-gradient(-190deg, #41c7ff, #00f);
+    box-shadow       : inset -5px -5px 8px #000078;
+    border-color     : #000078;
+}
+
+.blue:active {
+    box-shadow : inset 5px 5px 8px #000097;
+    background : linear-gradient(-190deg, #0000ff, #41c7ff);
+}
+
+.green {
+    text-shadow  : 1px 1px #040;
+    background   : linear-gradient(-190deg, #00c700, #080);
+    box-shadow   : inset -5px -5px 8px #040;
+    border-color : #040;
+}
+
+.green:active {
+    box-shadow : inset 5px 5px 8px #006700;
+    background : linear-gradient(-190deg, #080, #00c700);
+}
+
+.red {
+    text-shadow  : 1px 1px #400;
+    background   : linear-gradient(-190deg, #c70000, #800);
+    box-shadow   : inset -5px -5px 8px #400;
+    border-color : #400;
+}
+
+.red:active {
+    box-shadow : inset 5px 5px 8px #670000;
+    background : linear-gradient(-190deg, #800, #c70000);
+}
+
+.purple {
+    text-shadow  : 1px 1px #405;
+    background   : linear-gradient(-190deg, #b5f, #405);
+    box-shadow   : inset -5px -5px 8px #405;
+    border-color : #405;
+}
+
+.purple:active {
+    box-shadow : inset 5px 5px 8px #405;
+    background : linear-gradient(-190deg, #b5f, #405);
+}
+
+#forgot {
+    cursor         : pointer;
+    font           : 13px "Tahoma", sans-serif;
+    color          : #00f;
+    letter-spacing : 1px;
+    margin         : 5px 0 15px;
+}
+
+.cell > .line {
+    background : #aaa;
+    width      : 100%;
+    margin     : 10px;
+}
+
+.cell > .cell {
+    font-family : "Comic Sans MS", sans-serif;
+    color       : #666;
+    width       : auto;
+}
+
+footer {
+    background  : #fff;
+    z-index     : 5;
+    padding-top : 20px;
+    text-align  : center;
+    height      : 40px;
+}
+

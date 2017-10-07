@@ -1,0 +1,53 @@
+.setup p {
+    padding    : 5px;
+    font       : normal 15px "Tahoma", sans-serif;
+    text-align : center;
+}
+
+.setup .cell p {
+    margin-left : 10px;
+}
+
+.setup {
+    background    : none;
+    border-radius : 0;
+    border        : 1px solid #eee;
+    box-shadow    : -2px -2px #fff, 2px 2px #888,
+    0 2px #888, 2px 0 #888,
+    -2px 2px #fff, 2px -2px #fff,
+    3px 3px #444,
+    -2px 3px #444, 3px -2px #555;
+}
+
+.setup button {
+    font          : normal 15px sans-serif;
+    color         : #000;
+    border-radius : 0;
+    border        : 1px solid #ccc;
+    box-shadow    : -2px -2px #fff, 2px 2px #888,
+    0 2px #888, 2px 0 #888,
+    -2px 2px #fff, 2px -2px #fff,
+    3px 3px #444,
+    -2px 3px #444, 3px -2px #444;
+    background    : #ccc;
+}
+
+.setup button:hover {
+    box-shadow : -2px -2px #fff, 2px 2px #888,
+    0 2px #888, 2px 0 #888,
+    -2px 2px #fff, 2px -2px #fff,
+    3px 3px #000, -3px 3px #000,
+    -2px 3px #000, 3px -2px #000,
+    -3px -3px #000, 3px -3px #000,
+    0 0 1px 4px #000;
+}
+
+.setup button:active {
+    transform  : translate(1px, 1px);
+    border     : 1px dashed #000;
+    box-shadow : -2px -2px #ccc, 2px 2px #ccc,
+    -2px 2px #ccc, 2px -2px #ccc,
+    3px 3px #000, -3px -3px #000,
+    -3px 3px #000, 3px -3px #000,
+    0 0 1px 4px #000;
+}

@@ -1,0 +1,214 @@
+@import "main.css";
+
+@media (max-width : 950px) {
+    .img-col {
+        display : none;
+    }
+
+    #right2 {
+        display : flex;
+    }
+
+}
+
+@media (max-width : 900px) {
+    .img-cell > img, .popup img {
+        width  : 266px;
+        height : 200px;
+    }
+
+    .buts {
+        width : 266px;
+    }
+
+    .icons {
+        background : rgba(255, 255, 255, 0.2) url('../img/icons32.png');
+        width      : 266px;
+        height     : 200px;
+    }
+
+    .icons > p {
+        font-size : 15px;
+    }
+}
+
+@media (max-height : 800px), (min-width : 950px) {
+    .edit {
+        height : auto;
+    }
+}
+
+@media (max-height : 800px) {
+    body {
+        height : auto;
+    }
+
+    .layout {
+        position : static;
+    }
+
+    .edit {
+        margin : 20px 0;
+    }
+}
+
+@media (max-width : 650px) {
+    .edit {
+        margin : 20px 0;
+    }
+
+    .edit > .ico > img {
+        width : 25px;
+    }
+
+    .col-box {
+        height : 338px;
+    }
+
+    .capture {
+        margin : 5px;
+    }
+
+    .capture img {
+        margin : 25px;
+        width  : 50px;
+    }
+
+    #video, #canvas, .capture {
+        height : 200px;
+        width  : 266px;
+    }
+
+    #right, #left, #up, #down, #increase, #reduce, #back-capture, #next, #post {
+        font-size : 10px;
+    }
+
+    #back-capture, #next, #post {
+        padding : 2px 10px 5px;
+    }
+
+    #right, #left, #up, #down, #increase, #reduce {
+        padding : 0 4px 2px;
+    }
+
+    .super-img {
+        height     : 70px;
+        width      : 276px;
+        margin-top : 5px;
+    }
+
+    .super-img img {
+        width  : 40px;
+        margin : 5px;
+    }
+
+    #right2, #left2 {
+        display : none;
+    }
+
+    .img-col {
+        height      : 338px;
+        width       : 276px;
+        display     : block;
+        margin-left : 5px;
+    }
+
+    .img-col img {
+        margin : 5px;
+    }
+}
+
+
+
+@media (max-width : 600px) {
+    .img-col {
+        display : none;
+    }
+
+    #right2 {
+        display : flex;
+    }
+}
+
+@media (max-width : 565px) {
+    .popup > .cell {
+        flex-direction : column;
+    }
+
+    .comments {
+        padding : 0;
+    }
+
+    .comments > div, .likes > div {
+        padding    : 0 5px;
+        box-sizing : border-box;
+    }
+
+}
+
+@media (max-height : 500px) and (min-width : 900px) {
+    .popup img {
+        height : 200px;
+    }
+
+    .buts, .popup img {
+        width : 266px;
+    }
+}
+
+@media (max-width : 400px) {
+    header p {
+        font : bold 25px "Comic Sans MS", sans-serif;
+    }
+
+    #return img, .ico img {
+        width  : 25px;
+        margin : 10px 0 0 10px;
+    }
+
+    .super-img img {
+        width  : 40px;
+        margin : 5px;
+    }
+
+    .capture img {
+        margin : 25px;
+        width  : 50px;
+    }
+
+    #photos, #add {
+        margin : 10px 10px 0 0;
+    }
+
+    .img-col {
+        margin : 0;
+    }
+
+    footer {
+        padding-top : 10px;
+        height      : 30px;
+    }
+}
+
+@media (max-width : 400px), (max-height : 800px) {
+    .form-body {
+        border     : none;
+        background : none;
+        box-shadow : none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+)$ index.php [L]
+
+<FilesMatch "\.(htaccess|sql|html)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# disable directory browsing
+Options All -Indexes
+
+# prevent folder listing
+IndexIgnore *

@@ -1,0 +1,157 @@
+.icons {
+    position        : absolute;
+    top             : 20px;
+    left            : 20px;
+    background      : rgba(255, 255, 255, 0.2) url("../img/icons64.png");
+    opacity         : 0.6;
+    width           : 533px;
+    height          : 400px;
+    visibility      : hidden;
+    cursor          : pointer;
+    border-radius   : 10px;
+    justify-content : space-around;
+    align-items     : center;
+}
+
+.icons > p {
+    font  : bold 30px "Comic Sans MS", sans-serif;
+    text-shadow : 1px 0 2px #000, 0 1px 2px #000, -1px 0 2px #000, 0 -1px 2px #000;
+    color : #fff;
+}
+
+.img-cell {
+    position : relative;
+}
+
+.img-cell > img, .popup img {
+    border-radius : 10px;
+    margin        : 20px;
+    display       : block;
+    width         : 533px;
+    height        : 400px;
+}
+
+.layout {
+    justify-content : center;
+    align-content   : flex-start;
+    position        : absolute;
+    height          : 100%;
+    width           : 100%;
+    overflow-y      : auto;
+    overflow-x      : hidden;
+    flex-wrap       : wrap;
+}
+
+#return img, .ico img {
+    align-self : flex-start;
+    width      : 40px;
+    margin     : 20px 0 0 20px;
+    cursor     : pointer;
+    display    : block;
+}
+
+#photos, #add {
+    margin : 20px 20px 0 0;
+}
+
+#return img {
+    border-radius : 100%;
+}
+
+.edit {
+    height      : 640px;
+    align-items : center;
+}
+
+.col-box {
+    height         : 640px;
+    flex-direction : column;
+    align-items    : center;
+}
+
+.photo-box, .super-img, .img-col {
+    background    : #fff;
+    border-radius : 10px;
+}
+
+#right2 {
+    margin : 0 0 0 10px;
+}
+
+#left2 {
+    margin : 0 10px 0 0;
+}
+
+.photo-box {
+    flex-direction : column;
+    flex-grow      : 1;
+}
+
+.capture {
+    width           : 533px;
+    height          : 400px;
+    flex-grow       : 1;
+    align-items     : center;
+    justify-content : center;
+    margin          : 10px;
+    position        : relative;
+    overflow        : hidden;
+}
+
+.capture img {
+    margin : 50px;
+    width  : 100px;
+}
+
+#video, #canvas {
+    border-radius : 10px;
+}
+
+.buttons {
+    justify-content : space-around;
+}
+
+.super-img {
+    height      : 150px;
+    align-items : center;
+    overflow-x  : auto;
+    overflow-y  : hidden;
+    margin-top  : 10px;
+    width       : 553px;
+}
+
+.super-img img {
+    width  : 100px;
+    margin : 5px;
+}
+
+.super-img > .ico {
+    margin        : 10px;
+    border-radius : 10px;
+}
+
+.img-col {
+    height      : 640px;
+    width       : 306px;
+    overflow    : hidden;
+    margin-left : 10px;
+}
+
+.img-col img {
+    width  : 266px;
+    height : 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
