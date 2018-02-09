@@ -1,4 +1,4 @@
-__!NOTE__ to test this project you need to:
+__!NOTE__ to test this project you need:
 
 - Python 3
 
