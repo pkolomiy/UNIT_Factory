@@ -34,13 +34,14 @@ UNIT Factory projects
 
 [RTv1](https://github.com/pkolomiy/UNIT_Factory/tree/master/RTv1)
 
-## Web
+
+# Web (PHP, JavaScript, MySQL)
 
 [Piscine PHP](https://github.com/pkolomiy/UNIT_Factory/tree/master/Piscine-PHP)
 
 [Camagru](https://github.com/pkolomiy/UNIT_Factory/tree/master/Camagru)
 
 
-## Python
+# Python
 
 [CCMN](https://github.com/pkolomiy/UNIT_Factory/tree/master/CCMN)
