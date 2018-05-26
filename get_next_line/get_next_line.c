@@ -5,132 +5,130 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkolomiy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/20 17:19:27 by pkolomiy          #+#    #+#             */
-/*   Updated: 2017/07/21 00:58:42 by pkolomiy         ###   ########.fr       */
+/*   Created: 2018/05/26 17:52:10 by pkolomiy          #+#    #+#             */
+/*   Updated: 2018/05/26 17:54:25 by pkolomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		search_or_strlen(char *str, int action, int *index)
+static void	join(t_gnl *lst, const char *buff, int bytes)
 {
-	int		nbr;
+	int		i;
+	int		j;
+	char	*new_str;
 
-	nbr = 0;
-	if (action == SEARCH_NEWLINE)
+	i = -1;
+	j = 0;
+	lst->len = lst->end - lst->start;
+	new_str = (char*)malloc(lst->len + bytes + 1);
+	while (++i < lst->len)
+		*(new_str + i) = *(lst->str + lst->start + i);
+	while (j < bytes)
 	{
-		while (str && str[(*index)])
+		*(new_str + i) = *(buff + j);
+		i++;
+		j++;
+	}
+	*(new_str + i) = '\0';
+	lst->end -= lst->start;
+	lst->len += bytes;
+	lst->start = 0;
+	free(lst->str);
+	lst->str = new_str;
+}
+
+static int	reading(t_gnl *lst, char **buffer)
+{
+	int	bytes_read;
+
+	while (lst->str && *(lst->str + lst->end))
+	{
+		if (*(lst->str + lst->end) == '\n')
+			return (0);
+		lst->end++;
+	}
+	if (*buffer == NULL)
+		if (!(*buffer = (char*)malloc(BUFF_SIZE + 1)))
+			return (-1);
+	if (!(bytes_read = read(lst->fd, *buffer, BUFF_SIZE)))
+		return (0);
+	if (lst->str == NULL)
+	{
+		(*buffer)[bytes_read] = '\0';
+		lst->str = *buffer;
+		*buffer = NULL;
+		lst->len = bytes_read;
+	}
+	else
+		join(lst, *buffer, bytes_read);
+	return (1);
+}
+
+static int	final_check(t_gnl *lst)
+{
+	if (lst->end != lst->len)
+		lst->end++;
+	lst->start = lst->end;
+	if (lst->end == lst->len)
+	{
+		free(lst->str);
+		lst->str = NULL;
+		lst->start = 0;
+		lst->end = 0;
+		lst->len = 0;
+	}
+	return (1);
+}
+
+static int	processing(t_gnl *lst, char **line)
+{
+	int		i;
+	char	*buff;
+
+	buff = NULL;
+	while ((i = reading(lst, &buff)) != 0)
+		if (i == -1)
+			return (i);
+	if (buff)
+		free(buff);
+	if (lst->str)
+	{
+		if (!(*line = (char*)malloc(lst->end - lst->start + 1)))
+			return (-1);
+		while (i < lst->end - lst->start)
 		{
-			if (str[(*index)] == '\n')
-				return (1);
-			(*index)++;
+			*((*line) + i) = *(lst->str + lst->start + i);
+			i++;
 		}
-	}
-	else if (action == STRING_LENGTH)
-	{
-		while (str[nbr])
-			nbr++;
-		return (nbr);
+		*((*line) + i) = '\0';
+		return (final_check(lst));
 	}
 	return (0);
 }
 
-char	*copy_or_crop_string(char *str, int action, int nbr)
+int			get_next_line(const int fd, char **line)
 {
-	int		index;
-	char	*temp;
+	static t_gnl	*list = NULL;
+	t_gnl			*temp;
 
-	index = -1;
-	temp = 0;
-	if (action == MAKE_A_COPY)
-	{
-		temp = (char*)malloc(nbr + 1);
-		while (++index != nbr)
-			temp[index] = str[index];
-		temp[index] = '\0';
-	}
-	else if (action == CROP_STRING && str[0] && str[nbr])
-	{
-		temp = (char*)malloc(search_or_strlen(str, STRING_LENGTH, 0) - nbr + 1);
-		while (str[++nbr])
-			temp[++index] = str[nbr];
-		temp[++index] = '\0';
-	}
-	return (temp);
-}
-
-char	*join(char *str, char *temp, int nbr)
-{
-	char	*newstr;
-	int		index;
-	int		other_index;
-
-	if (!str)
-		return (copy_or_crop_string(temp, MAKE_A_COPY, nbr));
-	newstr = (char*)malloc(search_or_strlen(str, STRING_LENGTH, 0) + nbr + 1);
-	index = 0;
-	other_index = 0;
-	while (str[index])
-	{
-		newstr[index] = str[index];
-		index++;
-	}
-	while (other_index != nbr)
-	{
-		newstr[index] = temp[other_index];
-		other_index++;
-		index++;
-	}
-	newstr[index] = '\0';
-	return (newstr);
-}
-
-int		reading(t_var var, char **line)
-{
-	var.index = 0;
-	while (!(search_or_strlen(var.lst->str, SEARCH_NEWLINE, &var.index)) &&
-		(var.nbr = read(var.lst->fd, var.buff, BUFF_SIZE)))
-	{
-		var.temp = var.lst->str;
-		var.lst->str = join(var.temp, var.buff, var.nbr);
-		if (var.temp)
-			free(var.temp);
-	}
-	if (var.lst->str)
-	{
-		var.nbr = 0;
-		while (var.lst->str[var.nbr] != '\n' && var.lst->str[var.nbr])
-			var.nbr++;
-		*line = copy_or_crop_string(var.lst->str, MAKE_A_COPY, var.nbr);
-		var.first_char = var.lst->str[0];
-		var.temp = var.lst->str;
-		var.lst->str = copy_or_crop_string(var.temp, CROP_STRING, var.nbr);
-		free(var.temp);
-		if (*line[0] || var.first_char == '\n')
-			return (1);
-	}
-	return (0);
-}
-
-int		get_next_line(const int fd, char **line)
-{
-	static t_lst	*lst = 0;
-	t_var			var;
-
-	var.lst = lst;
-	if (fd < 0 || read(fd, var.buff, 0) < 0)
+	if (fd < 0 || read(fd, 0, 0) < 0)
 		return (-1);
-	while (var.lst)
+	temp = list;
+	while (temp)
 	{
-		if (var.lst->fd == fd)
-			return (reading(var, line));
-		var.lst = var.lst->next;
+		if (temp->fd == fd)
+			return (processing(temp, line));
+		temp = temp->next;
 	}
-	if (!(var.lst = (t_lst*)malloc(sizeof(t_lst))))
+	if (!(temp = (t_gnl*)malloc(sizeof(t_gnl))))
 		return (-1);
-	var.lst->fd = fd;
-	var.lst->str = 0;
-	var.lst->next = lst;
-	lst = var.lst;
-	return (reading(var, line));
+	temp->fd = fd;
+	temp->start = 0;
+	temp->end = 0;
+	temp->len = 0;
+	temp->str = NULL;
+	temp->next = list;
+	list = temp;
+	return (processing(temp, line));
 }
