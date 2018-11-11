@@ -3,11 +3,11 @@ import sys
 import statistics
 import collections
 from operator import itemgetter
-from pip._vendor import requests
-from pip._vendor.requests.auth import HTTPBasicAuth
+import requests
+from requests.auth import HTTPBasicAuth
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QTimer, QTime, QDate, QDateTime
-
+import urllib3
 
 class getRequest():
     def __init__(self, url):
@@ -788,6 +788,7 @@ class Ui_Ccmn(object):
 
 
 if __name__ == "__main__":
+    urllib3.disable_warnings()
     app = QtWidgets.QApplication(sys.argv)
     Ccmn = QtWidgets.QWidget()
     ui = Ui_Ccmn()
