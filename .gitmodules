@@ -1,3 +1,6 @@
 [submodule "matcha"]
 	path = matcha
 	url = https://github.com/jmelnich/matcha.git
+[submodule "hypertube"]
+	path = hypertube
+	url = https://github.com/semkaway/hypertube
