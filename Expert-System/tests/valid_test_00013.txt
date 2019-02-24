@@ -1,0 +1,11 @@
+(A ^ B) + C => D + !E
+(F | G) + (H | I) => A
+J + K => B
+L + !N => I
+
+=LJGC
+?DEC
+
+# D should be true.
+# E should be false.
+# C should be true.

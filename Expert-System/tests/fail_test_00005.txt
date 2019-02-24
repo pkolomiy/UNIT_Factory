@@ -1,0 +1,4 @@
+C => E # C implies E
+
+?=ABC
+=QWE

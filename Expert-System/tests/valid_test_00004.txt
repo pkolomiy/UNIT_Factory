@@ -1,0 +1,9 @@
+B + !C => A
+
+=
+?A
+
+# With =, A should be false.
+# With =B, A should be true.
+# With =C, A should be false.
+# With =BC, A should be false.

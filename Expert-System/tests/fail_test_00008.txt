@@ -1,0 +1,5 @@
+# this is a comment
+C         => E        # C implies E
+
+?
+=GVX

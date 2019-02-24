@@ -1,0 +1,5 @@
+# this is a comment
+C           => E        # here must be error
+
+?C =GVX
+QWE #error - something after query

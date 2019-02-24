@@ -1,0 +1,4 @@
+C           => E
++++++BBBBBB      # here must be error
+=
+?C

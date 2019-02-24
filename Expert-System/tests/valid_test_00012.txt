@@ -1,0 +1,6 @@
+A + B => C  # ' A + B' is True, so 'C' is True
+D | E => A  # 'D | E' is True, so A is True
+F ^ D => B  # ' F ^ D' is True, so B is True
+G + H => !E # 'G + H' is True, so '!E' is True, and 'E' is False
+=DGH
+?CA

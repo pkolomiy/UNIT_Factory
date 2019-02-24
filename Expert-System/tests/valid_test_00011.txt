@@ -1,0 +1,4 @@
+(A ^ B) + C => D  # D should be True
+(E + F) + (G ^ H) => I  # I should be True
+=ACEFG
+?DI

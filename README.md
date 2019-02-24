@@ -51,3 +51,8 @@ UNIT Factory projects
 [CCMN](https://github.com/pkolomiy/UNIT_Factory/tree/master/CCMN)
 
 [N-puzzle](https://github.com/pkolomiy/UNIT_Factory/tree/master/N-puzzle)
+
+
+# C#
+
+[Expert-System](https://github.com/pkolomiy/UNIT_Factory/tree/master/Expert-System)
