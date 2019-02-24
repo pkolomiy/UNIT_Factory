@@ -49,3 +49,5 @@ UNIT Factory projects
 # Python
 
 [CCMN](https://github.com/pkolomiy/UNIT_Factory/tree/master/CCMN)
+
+[N-puzzle](https://github.com/pkolomiy/UNIT_Factory/tree/master/N-puzzle)
