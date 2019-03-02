@@ -5,29 +5,51 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pkolomiy <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/02/11 16:54:47 by pkolomiy          #+#    #+#              #
-#    Updated: 2017/02/11 17:16:22 by pkolomiy         ###   ########.fr        #
+#    Created: 2019/03/02 23:58:52 by pkolomiy          #+#    #+#              #
+#    Updated: 2019/03/02 23:59:48 by pkolomiy         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libftprintf.a
 
-C = extra2.c type_pcs.c extra3.c just_char.c type_st.c convert.c extra4.c \
-print.c type_su.c extra.c ft_printf.c type_o.c type_x.c
+CC = gcc -Wall -Wextra -Werror -O3 -I includes
 
-O = extra2.o type_pcs.o extra3.o just_char.o type_st.o convert.o extra4.o \
-print.o type_su.o extra.o ft_printf.o type_o.o type_x.o
+SRC = libft/ft_memalloc.c \
+      libft/ft_bzero.c \
+      libft/ft_memcpy.c \
+      libft/ft_memdel.c \
+      libft/ft_memset.c \
+      libft/ft_strlen.c \
+      ft_printf/ft_printf.c \
+      ft_printf/parsing/parse_fmt.c \
+      ft_printf/parsing/parse_arg.c \
+      ft_printf/parsing/parse_flags.c \
+      ft_printf/buffer/flush_buffer.c \
+      ft_printf/buffer/buffer_set.c \
+      ft_printf/buffer/decimal_to_buffer.c \
+      ft_printf/buffer/string_to_buffer.c \
+      ft_printf/types/type_string.c \
+      ft_printf/types/type_pointer.c \
+      ft_printf/types/type_decimal.c \
+      ft_printf/types/type_octal.c \
+      ft_printf/types/type_hexadecimal.c \
+      ft_printf/types/type_unsigned.c \
+      ft_printf/types/type_char.c \
+      ft_printf/getters/get_t_number.c \
+      ft_printf/getters/get_width_and_precision.c \
+      ft_printf/getters/get_itoa_base_string.c
 
-$(NAME):
-	@gcc -Wall -Wextra -Werror -c $(C)
-	@ar rc $(NAME) $(O)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJ)
+	ar rc $@ $^
+
 clean:
-	@rm -f $(O)
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

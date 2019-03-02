@@ -5,12 +5,9 @@
 Implementation of printf on C
 
 Was implemented:
-%d, %D, %i, %u, %U, %o, %O, %x, %X, %s, %S, %p, %c, %C*
+%d, %D, %i, %u, %U, %o, %O, %x, %X, %s, %p, %c
 
-flags: h, hh, l, ll, j, z, #, 0, -, +
+flags: h, hh, l, ll, j, z, #, 0, -, +, *
 
 %%, minimum field-width, precision
 
-Test here http://ftprintf.com/
-
-*%C and %lc - implemented same as %c
