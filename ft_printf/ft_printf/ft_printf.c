@@ -21,7 +21,13 @@ int	ft_asprintf(char **ret, char *fmt, ...)
 	global.fmt.ptr = (t_byte*)fmt;
 	parse_fmt(&global);
 	va_end(global.ap);
-	*ret = (char*)global.ret.ptr;
+	if (global.ret.size)
+	{
+		*ret = (char *)malloc(global.ret.size + 1);
+		ft_memcpy(*ret, global.ret.ptr, global.ret.size);
+		(*ret)[global.ret.size] = '\0';
+		ft_memdel((void **)&global.ret.ptr);
+	}
 	return ((int)global.ret.size);
 }
 
