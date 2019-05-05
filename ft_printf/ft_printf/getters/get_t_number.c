@@ -6,7 +6,7 @@
 /*   By: pkolomiy <pkolomiy@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 11:58:00 by pkolomiy          #+#    #+#             */
-/*   Updated: 2019/05/05 15:06:55 by pkolomiy         ###   ########.fr       */
+/*   Updated: 2019/05/05 15:15:30 by pkolomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static t_number	get_signed(t_arg *arg, va_list ap)
 t_number		get_t_number(t_arg *arg, va_list ap, char c)
 {
 	t_number	num;
-	size_t		temp;
 
 	if (c == 'u' || c == 'x' || c == 'o' ||
 		c == 'U' || c == 'X' || c == 'O')
