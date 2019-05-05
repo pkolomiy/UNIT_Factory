@@ -6,7 +6,7 @@
 #    By: pkolomiy <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/02 23:58:52 by pkolomiy          #+#    #+#              #
-#    Updated: 2019/03/02 23:59:48 by pkolomiy         ###   ########.fr        #
+#    Updated: 2019/05/05 15:07:56 by pkolomiy         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,7 @@ SRC = libft/ft_memalloc.c \
       libft/ft_memdel.c \
       libft/ft_memset.c \
       libft/ft_strlen.c \
+      libft/ft_nbrlen.c \
       ft_printf/ft_printf.c \
       ft_printf/parsing/parse_fmt.c \
       ft_printf/parsing/parse_arg.c \
