@@ -6,7 +6,7 @@
 /*   By: pkolomiy <pkolomiy@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 11:58:00 by pkolomiy          #+#    #+#             */
-/*   Updated: 2019/05/05 15:15:30 by pkolomiy         ###   ########.fr       */
+/*   Updated: 2019/05/05 15:17:59 by pkolomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ t_number		get_t_number(t_arg *arg, va_list ap, char c)
 		(arg->flags.have_precision && !arg->precision)))
 		num.len = 0;
 	else if (c != 'x' && c != 'X' && c != 'o' && c != 'O')
-		ft_nbrlen(num.val);
+		num.len = ft_nbrlen(num.val);
 	return (num);
 }
