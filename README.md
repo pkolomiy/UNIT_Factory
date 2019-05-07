@@ -36,14 +36,22 @@ UNIT Factory projects
 
 [ft_ls](https://github.com/pkolomiy/UNIT_Factory/tree/master/ft_ls)
 
+[minishell](https://github.com/pkolomiy/UNIT_Factory/tree/master/minishell)
 
-# Web (PHP, JavaScript, MySQL)
+
+# Web
+
+## (PHP, JavaScript, MySQL)
 
 [Piscine PHP](https://github.com/pkolomiy/UNIT_Factory/tree/master/Piscine-PHP)
 
 [Camagru](https://github.com/pkolomiy/UNIT_Factory/tree/master/Camagru)
 
+## (Node.js, React.js, SQLite)
+
 [Matcha](https://github.com/jmelnich/matcha)
+
+## (Node.js, Vue.js, MongoDB)
 
 [Hypertube](https://github.com/semkaway/hypertube)
 
