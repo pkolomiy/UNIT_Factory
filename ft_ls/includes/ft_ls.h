@@ -6,7 +6,7 @@
 /*   By: pkolomiy <pkolomiy@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 11:30:00 by pkolomiy          #+#    #+#             */
-/*   Updated: 2019/03/03 11:30:00 by pkolomiy         ###   ########.fr       */
+/*   Updated: 2019/06/11 13:24:54 by pkolomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
-
-# pragma pack(1)
 
 # include "ft_ls_file_mode.h"
 

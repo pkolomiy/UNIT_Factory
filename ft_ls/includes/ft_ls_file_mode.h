@@ -6,7 +6,7 @@
 /*   By: pkolomiy <pkolomiy@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 15:26:00 by pkolomiy          #+#    #+#             */
-/*   Updated: 2019/03/08 15:26:00 by pkolomiy         ###   ########.fr       */
+/*   Updated: 2019/06/11 13:25:29 by pkolomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_LS_FILE_MODE_H
 
 # include "ft_printf.h"
+
+# pragma pack(push, 1)
 
 typedef struct s_mode		t_mode;
 typedef struct s_bits		t_bits;
@@ -51,5 +53,7 @@ union	u_file_mode
 	t_mode	file;
 	mode_t	st_mode;
 };
+
+# pragma pack(pop)
 
 #endif
