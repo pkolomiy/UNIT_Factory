@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gomoku</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidepanel">
+        <div>
+            <h3>Notifications</h3>
+            <div class="notification"></div>
+        </div>
+        <div>
+            <div class="setting">
+                <div>Current Move</div>
+                <div class="cell" id="current_move"><span></span></div>
+            </div>
+            <button onclick="resetGame()">Reset game</button>
+            <div class="setting">
+                <label for="double_three">Double-three rule</label>
+                <input type="checkbox" id="double_three" onchange="changeDoubleThreeRule()">
+            </div>
+            <div class="setting">
+                <label for="ai_mode">AI Mode</label>
+                <input type="checkbox" id="ai_mode" onchange="changeAIMode()">
+            </div>
+            <div class="setting">
+                <label for="ai_tips">AI Tips</label>
+                <input type="checkbox" id="ai_tips" onchange="changeAITips()">
+            </div>
+            <div class="difficulty">
+                <div class="setting">
+                    <label for="capture_rule">Capture mode</label>
+                    <input type="checkbox" id="capture_rule" onchange="changeCaptureRule()">
+                </div>
+                <div class="setting capture-rule">
+                    <div class="cell blue"><span></span></div>
+                    <div class="cell" id="blue_capture">0</div>
+                    <div class="cell red"><span></span></div>
+                    <div class="cell" id="red_capture">0</div>
+                </div>
+            </div>
+            <div class="difficulty">
+                <h4>Difficulty</h4>
+                <select id="difficulty_level" onchange="changeDifficultyLevel()">
+                    <option>easy</option>
+                    <option selected>medium</option>
+                    <option>hard</option>
+                    <option>custom</option>
+                </select>
+                <div class="setting">
+                    <label for="depth">Depth</label>
+                    <select id="depth" onchange="changeDifficulty()"></select>
+                </div>
+                <div class="setting">
+                    <label for="moves">Moves check</label>
+                    <select id="moves" onchange="changeDifficulty()"></select>
+                </div>
+            </div>
+            <div class="setting">
+                <label for="debug_mode">Debug mode</label>
+                <input type="checkbox" id="debug_mode" onchange="changeDebugMode()">
+            </div>
+        </div>
+    </div>
+    <div id="board">
+        <div id="turn-order">
+            <div>
+                <div>Blue first?</div>
+                <button onclick="firstMove('blue')">Yes</button>
+                <button onclick="firstMove('red')">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper debug-wrapper">
+    <h1>Debug</h1>
+    <div class="debug-panel">
+    </div>
+</div>
+<script type="text/javascript" src="js/showWinner.js"></script>
+<script type="text/javascript" src="js/selectCell.js"></script>
+<script type="text/javascript" src="js/globals.js"></script>
+<script type="text/javascript" src="js/createGame.js"></script>
+<script type="text/javascript" src="js/resetGame.js"></script>
+<script type="text/javascript" src="js/changeSettings.js"></script>
+<script type="text/javascript" src="js/addNotification.js"></script>
+<script type="text/javascript" src="js/updateDebug.js"></script>
+</body>
+</html>

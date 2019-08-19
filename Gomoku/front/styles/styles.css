@@ -1,0 +1,225 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Side panel */
+
+.sidepanel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.sidepanel button {
+  margin: 5px 0;
+  width: 100px;
+}
+
+.sidepanel > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification {
+  width: 220px;
+  height: 350px;
+  overflow: auto;
+}
+
+.notification p {
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.capture-rule .cell {
+  border: none;
+  flex-grow: 1;
+}
+
+.capture-rule .cell.blue,
+.capture-rule .cell.red {
+  max-width: 25px;
+  flex-grow: 1;
+}
+
+#current_move {
+  border: none;
+}
+
+/* Board */
+
+#board, .board {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.board {
+  flex-grow: 0;
+}
+
+#turn-order {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#turn-order > div > div {
+  margin-bottom: 5px
+}
+
+.row {
+  display: flex;
+}
+
+.row:last-child {
+  border-bottom: 1px solid;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.small {
+  width: 10px;
+  height: 10px;
+}
+
+.cell:not(:first-child) {
+  border-left: none;
+}
+
+.cell > span {
+  display: none;
+}
+
+.cell.blue > span,
+.cell.red > span,
+.cell.tip > span {
+  display: block;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+}
+
+.cell.blue > span {
+  background: radial-gradient(circle at center, white -10%, #48f 60%);
+}
+
+.cell.red > span {
+  background: radial-gradient(circle at center, white -10%, #f44 60%);
+}
+
+.cell.tip > span {
+  background: radial-gradient(circle at center, white -10%, #ddd 60%);
+}
+
+.cell.win > span {
+  filter: saturate(200%) contrast(200%);
+}
+
+.cell.placed > span {
+  filter: brightness(60%);
+}
+
+/* Debug */
+
+.debug-wrapper {
+  flex-wrap: wrap;
+}
+
+.debug-panel {
+  justify-content: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+.debug-el {
+  display: flex;
+  flex-direction: row;
+}
+
+.scores {
+  width: 100px;
+  min-width: 100px;
+  height: 256px;
+  overflow: auto;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+.score-button {
+  outline: none;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  width: 95px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px #ddd;
+  border-radius: 5px;
+}
+
+.score-button:active, .score-button.active {
+  background-color: #ddd;
+  box-shadow: none;
+}
+
+.score-num {
+  margin-bottom: 5px;
+  text-align: center;
+  width: 210px;
+}

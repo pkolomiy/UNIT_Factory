@@ -66,3 +66,8 @@ UNIT Factory projects
 # C#
 
 [Expert-System](https://github.com/pkolomiy/UNIT_Factory/tree/master/Expert-System)
+
+
+# Golang (and JavaScript)
+
+[Gomoku](https://github.com/pkolomiy/UNIT_Factory/tree/master/Gomoku)
