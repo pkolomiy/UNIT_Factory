@@ -71,6 +71,8 @@
 function firstMove(color) {
   document.querySelector('#turn-order').style.display = 'none';
   currentMove(color);
+  document.querySelector('#capture_rule').disabled = true;
+  document.querySelector('#ai_mode').disabled = true;
   if (document.querySelector('#ai_mode').checked && color === 'red') {
     selectCell(parseInt(boardHeight / 2), parseInt(boardWidth / 2), 'red');
   }

@@ -49,11 +49,6 @@ h1 {
   margin: 5px;
 }
 
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-
 .difficulty {
   display: flex;
   flex-direction: column;
@@ -195,10 +190,11 @@ h1 {
 
 .scores {
   width: 100px;
-  min-width: 100px;
+  min-width: 120px;
   height: 256px;
   overflow: auto;
   margin: 0 10px;
+  text-align: right;
   box-sizing: border-box;
 }
 
