@@ -38,6 +38,8 @@ UNIT Factory projects
 
 [minishell](https://github.com/pkolomiy/UNIT_Factory/tree/master/minishell)
 
+[malloc](https://github.com/pkolomiy/UNIT_Factory/tree/master/malloc)
+
 
 # Web
 
