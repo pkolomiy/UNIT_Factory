@@ -70,6 +70,11 @@ UNIT Factory projects
 [Expert-System](https://github.com/pkolomiy/UNIT_Factory/tree/master/Expert-System)
 
 
+# C++
+
+[Abstract-VM](https://github.com/pkolomiy/UNIT_Factory/tree/master/Abstract-VM)
+
+
 # Golang (and JavaScript)
 
 [Gomoku](https://github.com/pkolomiy/UNIT_Factory/tree/master/Gomoku)
