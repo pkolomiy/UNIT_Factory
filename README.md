@@ -78,3 +78,9 @@ UNIT Factory projects
 # Golang (and JavaScript)
 
 [Gomoku](https://github.com/pkolomiy/UNIT_Factory/tree/master/Gomoku)
+
+
+# Java
+
+[avaj-launcher](https://github.com/pkolomiy/UNIT_Factory/tree/master/avaj-launcher)
+

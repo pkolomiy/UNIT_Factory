@@ -1,0 +1,5 @@
+if [ "$2" != "" ]; then
+    echo "usage: ./run filename"
+else
+    java com.avaj.AvajLauncher $1
+fi
